@@ -1,5 +1,3 @@
-import processing.core.PApplet;
-
 public class Piece {
     String name;
     boolean isBlack;
@@ -10,51 +8,24 @@ public class Piece {
         this.isBlack = isBlack;
         this.isCaptured = isCaptured;
     }
+    Piece tourBlanche = new Piece("Tour", false, false);
+    Piece chevalBlanche = new Piece("Cheval", false, false);
+    Piece fouBlanche = new Piece("Fou", false, false);
+    Piece dameBlanche = new Piece("Dame", false, false);
+    Piece roiBlanche = new Piece("Roi", false, false);
+    Piece pionBlanche = new Piece("Pion", false, false);
 
-    @Override
-    public String toString() {
-        return "Piece{" +
-                "name='" + name + '\'' +
-                ", isBlack=" + isBlack +
-                ", isCaptured=" + isCaptured +
-                '}';
-    }
+    Piece tourNoir = new Piece("Tour", true, false);
+    Piece chevalNoir = new Piece("Cheval", true, false);
+    Piece fouNoir = new Piece("Fou", true, false);
+    Piece dameNoir = new Piece("Dame", true, false);
+    Piece roiNoir = new Piece("Roi", true, false);
+    Piece pionNoir = new Piece("Pion", true, false);
     public static void main(String[] args) {
-        Piece[] pieces = {
-                new Piece("tour", false, false),
-                new Piece("cheval", false,false),
-                new Piece("fou", false, false),
-                new Piece("dame", false, false),
-                new Piece("roi", false, false),
-                new Piece("fou", false, false),
-                new Piece("cheval", false, false),
-                new Piece("tour", false, false),
-                new Piece("pion", false, false),
-                new Piece("pion", false, false),
-                new Piece("pion", false, false),
-                new Piece("pion", false, false),
-                new Piece("pion", false, false),
-                new Piece("pion", false, false),
-                new Piece("pion", false, false),
-                new Piece("pion", false, false),
-                new Piece("pion", true, false),
-                new Piece("pion", true, false),
-                new Piece("pion", true, false),
-                new Piece("pion", true, false),
-                new Piece("pion", true, false),
-                new Piece("pion", true, false),
-                new Piece("pion", true, false),
-                new Piece("pion", true, false),
-                new Piece("tour", true, false),
-                new Piece("cheval", true,false),
-                new Piece("fou", true, false),
-                new Piece("dame", true, false),
-                new Piece("roi", true, false),
-                new Piece("fou", true, false),
-                new Piece("cheval", true, false),
-                new Piece("tour", true, false)
-        };
-        for (Piece item : pieces) System.out.println(item);
+
+
+
+        for (Piece item: ) System.out.println();
     }
 }
 

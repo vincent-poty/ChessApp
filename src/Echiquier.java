@@ -1,51 +1,43 @@
 import processing.core.PApplet;
 
-import java.awt.image.ColorModel;
-
-public class Echiquier extends PApplet {
-
-    private int nbrColonnes = 8;
-    private int nbrLignes = 8;
+public class Echiquier {
+    Piece piece;
+    private Piece tourBlanche;
 
     public Echiquier() {
+        piece = new Piece();
     }
 
-    public void settings() {
-        this.size(480, 480);
-    }
+    Case[][] cases = new Case[8][8];
 
-    public void setup() {
-        textSize(15.0F);
-        textAlign(3, 3);
+   public void Echiquier(){
 
-
-    }
-
-    public void draw(){
-        drawChess();
-    }
-    public void drawChess() {
-        float caseWidth = width / nbrColonnes;
-        float caseHeight = height / nbrLignes;
-        for(int x = 0; x < nbrLignes; ++x) {
-            for(int y = 0; y < nbrLignes; ++y) {
-                if ((x + y) % 2 == 0) {
-                    fill(227, 228, 194);
-                    stroke(227, 228, 194);
-                    rect((x * caseWidth), (0 + y * caseWidth), caseWidth, caseHeight);
-                } else {
-                    fill( 111,55,55);
-                    stroke( 111,55,55);
-                    rect((x * caseHeight), (0 + y * caseHeight), caseWidth, caseHeight);
-                }
-            }
-
+       int caseWidth = width / nbrColonnes;
+       int caseHeight = height / nbrLignes;
+       textSize(18);
+       textAlign(CENTER, CENTER);
+        for(int x = 0; x < 8; ++x) {
+            for(int y = 0; y < 8; ++y) {
+                    cases [x][y] = new Case(x , y);
+                    cases [0][0].piece = tourBlanche;
+                    cases [0][1].piece = fouBlanche;
         }
 
     }
+   }
 
-    public static void main(String[] args) {
-        PApplet.runSketch(new String[]{"Echiquier"}, new Echiquier());
+    public void setTourBlanche(Piece tourBlanche) {
+        this.tourBlanche = tourBlanche;
     }
 }
 
+/*
+ if ((x + y) % 2 == 0) {
+         fill(227, 228, 194, 55);
+         stroke(227, 228, 194, 55);
+         rect((x * caseWidth), (0 + y * caseWidth), caseWidth, caseHeight);
+         }  else {
+         fill( 111,55,55,20);
+         stroke( 111,55,55,20);
+         rect((x * caseHeight), (0 + y * caseHeight), caseWidth, caseHeight);
+         }*/
