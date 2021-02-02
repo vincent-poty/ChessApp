@@ -2,7 +2,7 @@ public class Piece {
     public String name;
     public int x;
     public int y;
-    static boolean isBlack;
+    public boolean isBlack;
 
     public Piece(String name, int x, int y, boolean isBlack) {
         this.name = name;
@@ -10,7 +10,6 @@ public class Piece {
         this.y = y;
         this.isBlack = isBlack;
     }
-
 
 }
 
