@@ -39,7 +39,7 @@ public class PChess extends PApplet {
     }
 
     public void mousePressed() {
-        int x = mouseX /size;
+        int x = mouseX / size;
         int y = mouseY / size;
         for (Piece p : pieces) {
             if (x == p.getX() && y == p.getY()) {
@@ -98,21 +98,21 @@ public class PChess extends PApplet {
     }
 
     private void drawPiece(Piece piece) {
-        if (piece.isSelected = false) {
+        if (piece.isSelected == false) {
             if (piece.isBlack) fill(165, 42, 42); //brun
             else fill(244, 226, 198);             // beige
             ellipse((piece.getX() * size) + (size * 0.5f), (piece.getY() * size) + (size * 0.5f), size * 0.8f, size * 0.8f);
             if (piece.isBlack) fill(255);
             else fill(0);
-            text(piece.getName(), piece.getX() * size, piece.getY() * size, size, size);
+            text(piece.getName(), piece.getX() * size  , piece.getY() * size  , size, size);
         } else {
             if (piece.isBlack) fill(165, 42, 42); //brun
             else fill(244, 226, 198);             // beige
             //ellipse((piece.x ) + (size * 0.5f), (piece.y ) +(size * 0.5f), size * 0.8f, size * 0.8f);
-            ellipse(piece.getX() + (size * 0.5f), piece.getY() + (size * 0.5f), size * 0.8f, size * 0.8f);
+            ellipse(piece.getX() + (size * 0.5f), piece.getY()  + (size * 0.5f), size * 0.8f, size * 0.8f);
             if (piece.isBlack) fill(255);
             else fill(0);
-            text(piece.getName(), piece.getX() - (size * 0.5f), piece.getY() - (size * 0.5f), size, size);
+            text(piece.getName(), piece.getX() - (size * 0.5f), piece.getY()  - (size * 0.5f), size, size);
         }
     }
 
