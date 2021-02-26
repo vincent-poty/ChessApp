@@ -39,13 +39,15 @@ public class PChess extends PApplet {
     }
 
     public void mousePressed() {
-        int x = mouseX ;
-        int y = mouseY ;
+        int x = mouseX /size;
+        int y = mouseY / size;
         for (Piece p : pieces) {
             if (x == p.getX() && y == p.getY()) {
                 p.isSelected = true;
-                p.setX((mouseX / size)  * size) + (size / 2));
-                p.setY((mouseY / size)* size) + (size / 2));
+                p.setX(x);
+                p.setY(y);
+               // p.setX( x + ((x * size) + (size / 2)));
+             //   p.setY( y + ((y * size) + (size / 2)));
             } else {
                 p.isSelected = false;
             }
@@ -107,7 +109,7 @@ public class PChess extends PApplet {
             if (piece.isBlack) fill(165, 42, 42); //brun
             else fill(244, 226, 198);             // beige
             //ellipse((piece.x ) + (size * 0.5f), (piece.y ) +(size * 0.5f), size * 0.8f, size * 0.8f);
-            ellipse((piece.getX()), (piece.getY()), size * 0.8f, size * 0.8f);
+            ellipse(piece.getX() + (size * 0.5f), piece.getY() + (size * 0.5f), size * 0.8f, size * 0.8f);
             if (piece.isBlack) fill(255);
             else fill(0);
             text(piece.getName(), piece.getX() - (size * 0.5f), piece.getY() - (size * 0.5f), size, size);
