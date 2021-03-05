@@ -1,3 +1,5 @@
+package org.chess.demo;
+
 import processing.core.PApplet;
 
 import java.util.ArrayList;
@@ -43,7 +45,7 @@ public class PChess extends PApplet {
         int y = mouseY / size;
         for (Piece p : pieces) {
            if (x == p.getX() && y == p.getY()){
-               p.isSelected();
+               p.setSelected(true);
            }
         }
     }
@@ -52,17 +54,19 @@ public class PChess extends PApplet {
         //int x = mouseX / size;
         // int y = mouseY / size;
         for (Piece p : pieces) {
-            if (!p.isSelected()) {
+            if (p.setSelected(true)) {
                p.setX(mouseX / size);
                p.setY(mouseY / size);
+               p.setSelected(false);
             }
+          //  p.setSelected(false);
         }
     }
 
-   /* public void mouseDragged() {
+   /*public void mouseDragged() {
         // int x = mouseX;
         //int y = mouseY;
-        for (Piece p : pieces) {
+        for (org.chess.demo.Piece p : pieces) {
             if (p.isSelected() == true) {
                 p.setX(mouseX);
                 p.setY(mouseY);
@@ -91,7 +95,7 @@ public class PChess extends PApplet {
     }
 
     private void drawPiece(Piece piece) {
-        if (piece.isSelected () == false) {
+        if (piece.setSelected(true)) {
             if (piece.isBlack()) fill(165, 42, 42); //brun
             else fill(244, 226, 198);             // beige
             ellipse((piece.getX() * size) + (size * 0.5f), (piece.getY() * size) + (size * 0.5f), size * 0.8f, size * 0.8f);
@@ -109,7 +113,7 @@ public class PChess extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.runSketch(new String[]{"PChess"}, new PChess());
+        PApplet.runSketch(new String[]{"org.chess.demo.PChess"}, new PChess());
     }
 }
 
