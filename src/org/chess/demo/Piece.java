@@ -7,6 +7,7 @@ public class Piece {
     private final boolean isBlack;
     private boolean isSelected = false;
     private boolean isCaptured ;
+    private boolean isPosition;
     // public boolean isAlreadyMoved = false;
 
 
@@ -39,9 +40,7 @@ public class Piece {
     public void setY(int y) {
         this.y = y;
     }
-/* public boolean setPosition(int x, int y){
-        return position;
-   }*/
+
 
     public boolean isBlack() {
 
@@ -55,6 +54,8 @@ public class Piece {
     public void setSelected(boolean selected) {
         isSelected = selected;
     }
+
+
 
     public boolean isCaptured() {
         return isCaptured;

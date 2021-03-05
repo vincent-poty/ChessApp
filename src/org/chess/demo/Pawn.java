@@ -1,25 +1,25 @@
 package org.chess.demo;
 
-public class Pawn extends Piece{
-    
-    private boolean Position;
+public class Pawn extends Piece {
 
-    public Pawn(String name, int x, int y, boolean isblack, boolean isSelected, boolean isCaptured, boolean Position) {
+    private boolean isPosition;
+
+    public Pawn(String name, int x, int y, boolean isblack, boolean isSelected, boolean isCaptured, boolean isPosition) {
         super(name, x, y, isblack, isSelected, isCaptured);
-        this.Position = Position;
+        this.isPosition = isPosition;
     }
 
     public boolean isPosition() {
-        return Position;
+        return isPosition;
     }
 
-   public void setPosition(int x, int y) {
-       boolean isAllow = true;
-        if ( x != getX() - 1 && x != getX() - 2 ){
-            isAllow = false;
+    public void setPosition(boolean isPosition) {
+        int PosY = getY();
+        if (PosY != getY() - 1) {
+            setPosition(false);
         }
-        if (x != getX() + 1 && x != getX() +2){
-            isAllow = false;
+        if (PosY != getY() + 1) {
+            setPosition(false);
         }
     }
 }
