@@ -45,7 +45,9 @@ public class PChess extends PApplet {
         int y = mouseY / size;
         for (Piece p : pieces) {
            if (x == p.getX() && y == p.getY()){
-               p.isSelected();
+               p.setSelected(true);
+               p.setX(mouseX);
+               p.setY(mouseY);
            }
         }
     }
@@ -54,9 +56,10 @@ public class PChess extends PApplet {
         //int x = mouseX / size;
         // int y = mouseY / size;
         for (Piece p : pieces) {
-            if (!p.isSelected()) {
+            if (p.isSelected()) {
                p.setX(mouseX / size);
                p.setY(mouseY / size);
+               p.setSelected(false);
             }
         }
     }
@@ -69,6 +72,7 @@ public class PChess extends PApplet {
                 p.setX(mouseX);
                 p.setY(mouseY);
             }
+
         }
     }
 

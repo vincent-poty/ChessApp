@@ -5,7 +5,7 @@ public class Piece {
     private int x;
     private int y;
     private final boolean isBlack;
-    private boolean isSelected ;
+    private boolean isSelected = false;
     private boolean isCaptured ;
     // public boolean isAlreadyMoved = false;
 
