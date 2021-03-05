@@ -12,19 +12,19 @@ public class PChess extends PApplet {
         String[] names = {"T", "C", "F", "D", "R", "F", "C", "T"};
         // first line
         for (int x = 0; x < 8; ++x) {
-            pieces.add(new Piece(names[x], x, 0, true));
+            pieces.add(new Piece(names[x], x, 0, true,false,false));
         }
         // second line
         for (int x = 0; x < 8; ++x) {
-            pieces.add(new Piece("P", x, 1, true));
+            pieces.add(new Piece("P", x, 1, true,false,false));
         }
         //third line
         for (int x = 0; x < 8; ++x) {
-            pieces.add(new Piece(names[x], x, 7, false));
+            pieces.add(new Piece(names[x], x, 7, false,false,false));
         }
         //fourd line
         for (int x = 0; x < 8; ++x) {
-            pieces.add(new Piece("P", x, 6, false));
+            pieces.add(new Piece("P", x, 6, false,false,false));
         }
     }
 
@@ -42,15 +42,9 @@ public class PChess extends PApplet {
         int x = mouseX / size;
         int y = mouseY / size;
         for (Piece p : pieces) {
-            if (x == p.getX() && y == p.getY()) {
-                p.isSelected = true;
-                p.setX(x);
-                p.setY(y);
-               // p.setX( x + ((x * size) + (size / 2)));
-             //   p.setY( y + ((y * size) + (size / 2)));
-            } else {
-                p.isSelected = false;
-            }
+           if (x == p.getX() && y == p.getY()){
+               p.isSelected();
+           }
         }
     }
 
@@ -58,24 +52,23 @@ public class PChess extends PApplet {
         //int x = mouseX / size;
         // int y = mouseY / size;
         for (Piece p : pieces) {
-            if (p.isSelected == true) {
-                p.setX(mouseX / size);
-                p.setY(mouseY / size);
-                p.isSelected = false;
+            if (!p.isSelected()) {
+               p.setX(mouseX / size);
+               p.setY(mouseY / size);
             }
         }
     }
 
-    public void mouseDragged() {
+   /* public void mouseDragged() {
         // int x = mouseX;
         //int y = mouseY;
         for (Piece p : pieces) {
-            if (p.isSelected == true) {
+            if (p.isSelected() == true) {
                 p.setX(mouseX);
                 p.setY(mouseY);
             }
         }
-    }
+    }*/
 
     private void drawPieces() {
         textAlign(CENTER, CENTER);
@@ -98,21 +91,20 @@ public class PChess extends PApplet {
     }
 
     private void drawPiece(Piece piece) {
-        if (piece.isSelected == false) {
-            if (piece.isBlack) fill(165, 42, 42); //brun
+        if (piece.isSelected () == false) {
+            if (piece.isBlack()) fill(165, 42, 42); //brun
             else fill(244, 226, 198);             // beige
             ellipse((piece.getX() * size) + (size * 0.5f), (piece.getY() * size) + (size * 0.5f), size * 0.8f, size * 0.8f);
-            if (piece.isBlack) fill(255);
+            if (piece.isBlack()) fill(255);
             else fill(0);
-            text(piece.getName(), piece.getX() * size  , piece.getY() * size  , size, size);
+            text(piece.getName(), piece.getX() * size, piece.getY() * size, size, size);
         } else {
-            if (piece.isBlack) fill(165, 42, 42); //brun
+            if (piece.isBlack()) fill(165, 42, 42); //brun
             else fill(244, 226, 198);             // beige
-            //ellipse((piece.x ) + (size * 0.5f), (piece.y ) +(size * 0.5f), size * 0.8f, size * 0.8f);
-            ellipse(piece.getX() + (size * 0.5f), piece.getY()  + (size * 0.5f), size * 0.8f, size * 0.8f);
-            if (piece.isBlack) fill(255);
+            ellipse(piece.getX(), piece.getY(), size * 0.8f, size * 0.8f);
+            if (piece.isBlack()) fill(255);
             else fill(0);
-            text(piece.getName(), piece.getX() - (size * 0.5f), piece.getY()  - (size * 0.5f), size, size);
+            text(piece.getName(), piece.getX() - (size * 0.5f), piece.getY() - (size * 0.5f), size, size);
         }
     }
 
