@@ -13,13 +13,13 @@ public class Pawn extends Piece{
         return Position;
     }
 
-  /* public boolean setPosition(int x, int y) {
+   public void setPosition(int x, int y) {
        boolean isAllow = true;
-        if ( y != getY() - 1 && y != getY() - 2 ){
+        if ( x != getX() - 1 && x != getX() - 2 ){
             isAllow = false;
         }
-        if (y != getY() + 1 && y != getY() +2){
+        if (x != getX() + 1 && x != getX() +2){
             isAllow = false;
         }
-    }*/
+    }
 }

@@ -45,7 +45,7 @@ public class PChess extends PApplet {
         int y = mouseY / size;
         for (Piece p : pieces) {
            if (x == p.getX() && y == p.getY()){
-               p.setSelected(true);
+               p.isSelected();
            }
         }
     }
@@ -54,25 +54,23 @@ public class PChess extends PApplet {
         //int x = mouseX / size;
         // int y = mouseY / size;
         for (Piece p : pieces) {
-            if (p.setSelected(true)) {
+            if (!p.isSelected()) {
                p.setX(mouseX / size);
                p.setY(mouseY / size);
-               p.setSelected(false);
             }
-          //  p.setSelected(false);
         }
     }
 
-   /*public void mouseDragged() {
+   public void mouseDragged() {
         // int x = mouseX;
         //int y = mouseY;
         for (org.chess.demo.Piece p : pieces) {
-            if (p.isSelected() == true) {
+            if (p.isSelected()) {
                 p.setX(mouseX);
                 p.setY(mouseY);
             }
         }
-    }*/
+    }
 
     private void drawPieces() {
         textAlign(CENTER, CENTER);
@@ -95,7 +93,7 @@ public class PChess extends PApplet {
     }
 
     private void drawPiece(Piece piece) {
-        if (piece.setSelected(true)) {
+        if (!piece.isSelected()){
             if (piece.isBlack()) fill(165, 42, 42); //brun
             else fill(244, 226, 198);             // beige
             ellipse((piece.getX() * size) + (size * 0.5f), (piece.getY() * size) + (size * 0.5f), size * 0.8f, size * 0.8f);

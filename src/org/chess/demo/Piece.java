@@ -52,8 +52,8 @@ public class Piece {
         return isSelected;
     }
 
-    public boolean setSelected(boolean selected) {
-        return selected;
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 
     public boolean isCaptured() {
