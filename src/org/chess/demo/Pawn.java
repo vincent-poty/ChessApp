@@ -1,25 +1,27 @@
 package org.chess.demo;
 
+
 public class Pawn extends Piece {
 
-    private boolean isPosition;
+
 
     public Pawn(String name, int x, int y, boolean isblack, boolean isSelected, boolean isCaptured, boolean isPosition) {
-        super(name, x, y, isblack, isSelected, isCaptured);
-        this.isPosition = isPosition;
+        super(name, x, y, isblack, isSelected, isCaptured,isPosition);
+
     }
 
-    public boolean isPosition() {
-        return isPosition;
-    }
 
-    public void setPosition(boolean isPosition) {
+    //  @Override
+  public boolean setPosition(int x, int y) {
         int PosY = getY();
-        if (PosY != getY() - 1) {
-            setPosition(false);
+        if (PosY != x - 1 && isSelected()) {
+            return false;
         }
-        if (PosY != getY() + 1) {
-            setPosition(false);
+        else if (PosY != x + 1 && isSelected()) {
+            return false;
         }
+        setX(x);
+        setY(y);
+        return true;
     }
 }

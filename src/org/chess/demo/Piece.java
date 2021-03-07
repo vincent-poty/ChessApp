@@ -1,6 +1,6 @@
 package org.chess.demo;
 
-public class Piece {
+public abstract class Piece {
     private final String name;
     private int x;
     private int y;
@@ -11,13 +11,14 @@ public class Piece {
     // public boolean isAlreadyMoved = false;
 
 
-    public Piece(String name, int x, int y, boolean isblack, boolean isSelected, boolean isCaptured) {
+    public Piece(String name, int x, int y, boolean isBlack, boolean isSelected, boolean isCaptured, boolean isPosition) {
         this.name = name;
         setX(x);
         setY(y);
-        this.isBlack = isblack;
-        setSelected(isSelected);
-        this.isCaptured = false;
+        this.isBlack = isBlack;
+        this.isSelected = isSelected;
+        this.isCaptured = isCaptured;
+        this.isPosition = isPosition;
     }
 
     public String getName() {
@@ -55,7 +56,15 @@ public class Piece {
         isSelected = selected;
     }
 
+    public boolean isPosition() {
+        return isPosition;
+    }
 
+    public abstract boolean setPosition(int x, int y) {
+
+    }
+
+    //  public boolean setPosition(int x, int y);
 
     public boolean isCaptured() {
         return isCaptured;
