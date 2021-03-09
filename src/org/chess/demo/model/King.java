@@ -1,6 +1,6 @@
-package org.chess.demo;
+package org.chess.demo.model;
 
-import org.chess.demo.Piece;
+import org.chess.demo.model.Piece;
 
 public class King extends Piece{
 
@@ -10,10 +10,10 @@ public class King extends Piece{
     
     @Override
     public boolean setPosition(int x, int y){
-
-
-        setX(x);
-        setY(y);
+        if((y - this.y) != 1 || (x - this.x) != 1) {
+            return false;
+        }
+        setPosition(x,y);
         return true;
     }
 }

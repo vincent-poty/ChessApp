@@ -1,19 +1,19 @@
-package org.chess.demo;
+package org.chess.demo.model;
 
 public class Piece {
     private final String name;
     protected int x;
     protected int y;
     private final boolean isBlack;
-    protected boolean isSelected = false;
-    private boolean isCaptured = false;
+    protected boolean isSelected ;
+    protected boolean isCaptured = false;
     // public boolean isAlreadyMoved = false;
 
 
     public Piece(String name, int x, int y, boolean isBlack, boolean isSelected) {
         this.name = name;
-        setX(x);
-        setY(y);
+        this.x = x;
+        this.y = y;
         this.isBlack = isBlack;
         this.isSelected = isSelected;
     }
@@ -39,7 +39,6 @@ public class Piece {
         this.y = y;
     }
 
-
     public boolean isBlack() {
 
         return isBlack;
@@ -55,23 +54,12 @@ public class Piece {
         isSelected = selected;
     }
 
-
     public  boolean setPosition(int x, int y){
+        this.x = x;
+        this.y = y;
         return true;
     }
 
-
-    public boolean isCaptured() {
-        return isCaptured;
-    }
-
-    public void setCaptured(boolean captured) {
-        isCaptured = captured;
-    }
-
-   /* public boolean checkIfMovedIsAllowed(int x,int y){
-
-    }*/
 }
 
 

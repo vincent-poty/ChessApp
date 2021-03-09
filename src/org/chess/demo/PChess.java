@@ -1,5 +1,8 @@
 package org.chess.demo;
 
+import org.chess.demo.model.Pawn;
+import org.chess.demo.model.Piece;
+import org.chess.demo.model.Rook;
 import processing.core.PApplet;
 
 import java.util.ArrayList;
@@ -7,25 +10,27 @@ import java.util.List;
 
 public class PChess extends PApplet {
 
-    int size = 100;
-    List<Piece> pieces = new ArrayList<>();
+    private int size = 100;
+    private List<Piece> pieces = new ArrayList<>();
 
-    private void initPieces() {
+    private void buildPieces() {
         String[] names = {"T", "C", "F", "D", "R", "F", "C", "T"};
         // first line
-        for (int x = 0; x < 8; ++x) {
+        for (int x = 1; x < 7; ++x) {
             pieces.add(new Piece(names[x], x, 0, true, false));
-
         }
+        pieces.add(new Rook("T", 0, 0, true, false));
+        pieces.add(new Rook("T", 7, 0, true, false));
         // second line
         for (int x = 0; x < 8; ++x) {
             pieces.add(new Pawn("P", x, 1, true, false));
         }
         //third line
-        for (int x = 0; x < 8; ++x) {
+        for (int x = 1; x < 7; ++x) {
             pieces.add(new Piece(names[x], x, 7, false, false));
-
         }
+        pieces.add(new Rook("T", 0, 7, false, false));
+        pieces.add(new Rook("T", 7, 7, false, false));
         //fourd line
         for (int x = 0; x < 8; ++x) {
             // pieces.add(new Piece("P", x, 6, false, false, false));
@@ -34,7 +39,7 @@ public class PChess extends PApplet {
     }
 
     public void settings() {
-        initPieces();
+        buildPieces();
         this.size(8 * size, 8 * size);
     }
 
@@ -49,9 +54,7 @@ public class PChess extends PApplet {
         for (Piece p : pieces) {
             if (x == p.getX() && y == p.getY()) {
                 p.setSelected(true);
-                p.setX(mouseX);
-                p.setY(mouseY);
-                break;
+                p.setPosition(mouseX, mouseY);
             }
         }
     }
@@ -63,8 +66,6 @@ public class PChess extends PApplet {
             if (p.isSelected()) {
                 p.setPosition(x, y);
             }
-            //  p.setX(mouseX / size);
-            // p.setY(mouseY / size);
             p.setSelected(false);
         }
     }
@@ -72,13 +73,11 @@ public class PChess extends PApplet {
     public void mouseDragged() {
         for (Piece p : pieces) {
             if (p.isSelected()) {
-                p.setX(mouseX);
-                p.setY(mouseY);
+                p.setPosition(mouseX, mouseY);
             }
 
         }
     }
-
 
     private void drawPieces() {
         textAlign(CENTER, CENTER);
