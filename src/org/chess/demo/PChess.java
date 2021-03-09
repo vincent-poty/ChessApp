@@ -14,20 +14,22 @@ public class PChess extends PApplet {
         String[] names = {"T", "C", "F", "D", "R", "F", "C", "T"};
         // first line
         for (int x = 0; x < 8; ++x) {
-            pieces.add(new Piece(names[x], x, 0, true, false, false,true));
+            pieces.add(new Piece(names[x], x, 0, true, false));
+
         }
         // second line
         for (int x = 0; x < 8; ++x) {
-            pieces.add(new Pawn("P", x, 1, true, false, false, true));
+            pieces.add(new Pawn("P", x, 1, true, false));
         }
         //third line
         for (int x = 0; x < 8; ++x) {
-            pieces.add(new Piece(names[x], x, 7, false, false, false,true));
+            pieces.add(new Piece(names[x], x, 7, false, false));
+
         }
         //fourd line
         for (int x = 0; x < 8; ++x) {
             // pieces.add(new Piece("P", x, 6, false, false, false));
-            pieces.add(new Pawn("P", x, 6, false, false, false, true));
+            pieces.add(new Pawn("P", x, 6, false, false));
         }
     }
 
@@ -49,26 +51,25 @@ public class PChess extends PApplet {
                 p.setSelected(true);
                 p.setX(mouseX);
                 p.setY(mouseY);
+                break;
             }
         }
     }
 
     public void mouseReleased() {
-        //int x = mouseX / size;
-        // int y = mouseY / size;
-
+        int x = mouseX / size;
+        int y = mouseY / size;
         for (Piece p : pieces) {
-            if (p.isSelected() ) {
-                p.setX(mouseX / size);
-                p.setY(mouseY / size);
-                p.setSelected(false);
+            if (p.isSelected()) {
+                p.setPosition(x, y);
             }
+            //  p.setX(mouseX / size);
+            // p.setY(mouseY / size);
+            p.setSelected(false);
         }
     }
 
     public void mouseDragged() {
-        // int x = mouseX;
-        //int y = mouseY;
         for (Piece p : pieces) {
             if (p.isSelected()) {
                 p.setX(mouseX);

@@ -1,13 +1,19 @@
 package org.chess.demo;
 
+import org.chess.demo.Piece;
+
 public class King extends Piece{
-    public King(String name, int x, int y, boolean isBlack, boolean isSelected, boolean isCaptured, boolean isPosition) {
-        super(name, x, y, isBlack, isSelected, isCaptured, isPosition);
+
+    public King(String name, int x, int y, boolean isblack, boolean isSelected) {
+        super(name, x, y, isblack, isSelected);
     }
+    
+    @Override
+    public boolean setPosition(int x, int y){
 
-/*
-    public King(String name, int x, int y, boolean isblack, boolean isSelected, boolean isCaptured) {
-        super(name, x, y, isblack, isSelected, isCaptured);
 
-    }*/
+        setX(x);
+        setY(y);
+        return true;
+    }
 }

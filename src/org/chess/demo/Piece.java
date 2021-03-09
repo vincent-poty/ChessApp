@@ -1,24 +1,21 @@
 package org.chess.demo;
 
-public abstract class Piece {
+public class Piece {
     private final String name;
-    private int x;
-    private int y;
+    protected int x;
+    protected int y;
     private final boolean isBlack;
-    private boolean isSelected = false;
-    private boolean isCaptured ;
-    private boolean isPosition;
+    protected boolean isSelected = false;
+    private boolean isCaptured = false;
     // public boolean isAlreadyMoved = false;
 
 
-    public Piece(String name, int x, int y, boolean isBlack, boolean isSelected, boolean isCaptured, boolean isPosition) {
+    public Piece(String name, int x, int y, boolean isBlack, boolean isSelected) {
         this.name = name;
         setX(x);
         setY(y);
         this.isBlack = isBlack;
         this.isSelected = isSelected;
-        this.isCaptured = isCaptured;
-        this.isPosition = isPosition;
     }
 
     public String getName() {
@@ -49,22 +46,20 @@ public abstract class Piece {
     }
 
     public boolean isSelected() {
+
         return isSelected;
     }
 
     public void setSelected(boolean selected) {
+
         isSelected = selected;
     }
 
-    public boolean isPosition() {
-        return isPosition;
+
+    public  boolean setPosition(int x, int y){
+        return true;
     }
 
-    public abstract boolean setPosition(int x, int y) {
-
-    }
-
-    //  public boolean setPosition(int x, int y);
 
     public boolean isCaptured() {
         return isCaptured;
