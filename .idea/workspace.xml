@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cbd04717-cd8b-46a8-8ff7-ef960664f356" name="Default Changelist" comment="Versionchris1" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="ReglePions" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mupXfMJlEhAtJ4Kt14GTgNrSap" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/PChess.java" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.PChess">
+    <configuration name="DragDrop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DragDrop" />
+      <module name="ChessApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Echiquier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Echiquier" />
+      <module name="ChessApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PChess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.chess.demo.PChess" />
+      <module name="ChessApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Piece" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.chess.demo.model.Piece" />
+      <module name="ChessApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Programme" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Programme" />
+      <module name="ChessApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PChess" />
+        <item itemvalue="Application.Programme" />
+        <item itemvalue="Application.Piece" />
+        <item itemvalue="Application.Echiquier" />
+        <item itemvalue="Application.DragDrop" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cbd04717-cd8b-46a8-8ff7-ef960664f356" name="Default Changelist" comment="" />
+      <created>1610353372657</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610353372657</updated>
+    </task>
+    <task id="LOCAL-00001" summary="premier commit">
+      <created>1610483514994</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610483514994</updated>
+    </task>
+    <task id="LOCAL-00002" summary="modification Case">
+      <created>1610483554908</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1610483554908</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial class">
+      <created>1611593110604</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611593110604</updated>
+    </task>
+    <task id="LOCAL-00004" summary="nouveau code simple">
+      <created>1611741553218</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1611741553218</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Correction Piece">
+      <created>1612284265477</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612284265477</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Ajout Drag and Drop">
+      <created>1612344520172</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1612344520172</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Encapsulage test">
+      <created>1614337297818</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1614337297818</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Encapsulage test2">
+      <created>1614339583217</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1614339583217</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Encapsulage test3">
+      <created>1614341135908</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1614341135908</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Encapsulage isSelected">
+      <created>1614934037258</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1614934037258</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Encapsulage isSelected1">
+      <created>1614945565302</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1614945565302</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Encapsulage isSelected1">
+      <created>1614946814598</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1614946814598</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Encapsulage isSelected2">
+      <created>1614947541884</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1614947541884</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Pawn">
+      <created>1614960886916</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1614960886916</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Pawn abstract">
+      <created>1615113437182</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1615113437182</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Pawn regle pion et roock">
+      <created>1615320913717</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1615320913717</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Pawn regle pion et roock2">
+      <created>1615373323281</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1615373323281</updated>
+    </task>
+    <task id="LOCAL-00018" summary="oldVersion">
+      <created>1615374730323</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1615374730323</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Versionchris">
+      <created>1615376099929</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1615376099929</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="premier commit" />
+    <MESSAGE value="modification Case" />
+    <MESSAGE value="Initial class" />
+    <MESSAGE value="nouveau code simple" />
+    <MESSAGE value="Correction Piece" />
+    <MESSAGE value="Ajout Drag and Drop" />
+    <MESSAGE value="Encapsulage test" />
+    <MESSAGE value="Encapsulage test2" />
+    <MESSAGE value="Encapsulage test3" />
+    <MESSAGE value="Encapsulage isSelected" />
+    <MESSAGE value="Encapsulage isSelected1" />
+    <MESSAGE value="Encapsulage isSelected2" />
+    <MESSAGE value="Pawn" />
+    <MESSAGE value="Pawn abstract" />
+    <MESSAGE value="Pawn regle pion et roock" />
+    <MESSAGE value="Pawn regle pion et roock2" />
+    <MESSAGE value="oldVersion" />
+    <MESSAGE value="Versionchris" />
+    <option name="LAST_COMMIT_MESSAGE" value="Versionchris" />
+  </component>
+</project>
