@@ -1,6 +1,8 @@
 package org.chess.demo;
 
 
+import org.chess.demo.Piece;
+
 public class Pawn extends Piece {
 
 
@@ -11,13 +13,15 @@ public class Pawn extends Piece {
 
     @Override
     public boolean setPosition(int x, int y) {
-        int deltaY = Math.abs (y - this.oldY);
-        if (x != this.oldX) return false;
-        if(deltaY != 1) {
+        int deltaY = (y - this.y);
+        if (x != this.x) return false;
+        if(isBlack() == true && deltaY != 1) {
+            return false;
+        }
+        if(isBlack() == false && deltaY != -1) {
             return false;
         }
         this.y = y;
-        this.x = x;
         return true;
     }
 }

@@ -55,17 +55,9 @@ public class Piece {
     }
 
     public void setSelected(boolean selected) {
-        if (selected){
-            oldX = x;
-            oldY = y;
-        }
         isSelected = selected;
     }
 
-    protected void setOldPos(){
-        x = oldX;
-        y = oldY;
-    }
 
     public  boolean setPosition(int x, int y){
         return true;
