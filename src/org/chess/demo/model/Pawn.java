@@ -11,17 +11,17 @@ public class Pawn extends Piece {
 
     }
 
-
     @Override
     public boolean setPosition(int x, int y) {
+        int deltaY = (y - this.y);
         if (x != this.x) return false;
-        if(isBlack() == true && (y - this.y) != 1) {
+        if(isBlack() == true && deltaY != 1) {
             return false;
         }
-        if(isBlack() == false && (y - this.y) != -1) {
+        if(isBlack() == false && deltaY != -1) {
             return false;
         }
         this.y = y;
-        return true;
+        return false;
     }
 }

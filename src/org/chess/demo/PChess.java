@@ -54,7 +54,9 @@ public class PChess extends PApplet {
         for (Piece p : pieces) {
             if (x == p.getX() && y == p.getY()) {
                 p.setSelected(true);
-                p.setPosition(mouseX, mouseY);
+                p.setX(mouseX);
+                p.setY(mouseY);
+                break;
             }
         }
     }
@@ -65,17 +67,17 @@ public class PChess extends PApplet {
         for (Piece p : pieces) {
             if (p.isSelected()) {
                 p.setPosition(x, y);
+                p.setSelected(false);
             }
-            p.setSelected(false);
         }
     }
 
     public void mouseDragged() {
         for (Piece p : pieces) {
             if (p.isSelected()) {
-                p.setPosition(mouseX, mouseY);
+                p.setX(mouseX);
+                p.setY(mouseY);
             }
-
         }
     }
 

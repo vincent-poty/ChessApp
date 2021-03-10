@@ -24,6 +24,7 @@ public class Piece {
     }
 
     public int getX() {
+
         return x;
     }
 
