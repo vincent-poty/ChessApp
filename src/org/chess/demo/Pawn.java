@@ -13,15 +13,16 @@ public class Pawn extends Piece {
 
     @Override
     public boolean setPosition(int x, int y) {
-        int deltaY = (y - this.y);
         if (x != this.x) return false;
-        if(isBlack() == true && deltaY != 1) {
-            return false;
+        int deltaY = (y - this.y);
+        if((isBlack() && deltaY == 1) ||
+                (isBlack() && this.y == 1 && deltaY == 2 ) ||
+                (!isBlack() && deltaY == -1) ||
+                (!isBlack() && this.y == 6 && deltaY == -2 )){
+            this.x = x;
+            this.y = y;
+            return true;
         }
-        if(isBlack() == false && deltaY != -1) {
-            return false;
-        }
-        this.y = y;
-        return true;
+        return false;
     }
 }

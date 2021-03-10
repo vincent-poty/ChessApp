@@ -9,10 +9,13 @@ public class King extends Piece{
     
     @Override
     public boolean setPosition(int x, int y){
-        if((y - this.y) != 1 || (x - this.x) != 1) {
-            return false;
+        int deltaY = Math.abs(y - this.y);
+        int deltaX = Math.abs(x - this.x);
+        if((deltaY == 1) || deltaX == 1){
+            this.x = x;
+            this.y = y;
+            return true;
         }
-        setPosition(x,y);
-        return true;
+        return false;
     }
 }

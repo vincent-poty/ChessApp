@@ -15,39 +15,47 @@ public class PChess extends PApplet {
 
     private void buildPieces() {
         String[] names = {"T", "C", "F", "D", "R", "F", "C", "T"};
-        // first line
-        for (int x = 1; x < 7; ++x) {
-            pieces.add(new Piece(names[x], x, 0, true, false));
-        }
+        // black
         pieces.add(new Rook("T", 0, 0, true, false));
+        pieces.add(new Knight("C", 1,0 , true, false));
+        pieces.add(new Bishop("F", 2,0 , true, false));
+        pieces.add(new Queen("D", 3,0 , true, false));
+        pieces.add(new King("R", 4,0 , true, false));
+        pieces.add(new Bishop("F", 5,0 , true, false));
+        pieces.add(new Knight("C", 6,0 , true, false));
         pieces.add(new Rook("T", 7, 0, true, false));
         // second line
         for (int x = 0; x < 8; ++x) {
             pieces.add(new Pawn("P", x, 1, true, false));
         }
-        //third line
-        for (int x = 1; x < 7; ++x) {
-            pieces.add(new Piece(names[x], x, 7, false, false));
-        }
+        //white
         pieces.add(new Rook("T", 0, 7, false, false));
+        pieces.add(new Knight("C", 1,7 , false, false));
+        pieces.add(new Bishop("F", 2,7 , false, false));
+        pieces.add(new Queen("D", 3,7 , false, false));
+        pieces.add(new King("R", 4,7 , false, false));
+        pieces.add(new Bishop("F", 5,7 , false, false));
+        pieces.add(new Knight("C", 6,7 , false, false));
         pieces.add(new Rook("T", 7, 7, false, false));
         //fourd line
         for (int x = 0; x < 8; ++x) {
-            // pieces.add(new Piece("P", x, 6, false, false, false));
             pieces.add(new Pawn("P", x, 6, false, false));
         }
     }
-@Override
+
+    @Override
     public void settings() {
         buildPieces();
         this.size(8 * size, 8 * size);
     }
-@Override
+
+    @Override
     public void draw() {
         drawCases();
         drawPieces();
     }
-@Override
+
+    @Override
     public void mousePressed() {
         int x = mouseX / size;
         int y = mouseY / size;
@@ -58,7 +66,8 @@ public class PChess extends PApplet {
             }
         }
     }
-@Override
+
+    @Override
     public void mouseReleased() {
         int x = mouseX / size;
         int y = mouseY / size;
@@ -92,11 +101,11 @@ public class PChess extends PApplet {
 
     private void drawPiece(Piece piece) {
         float topX = piece.isSelected() ? mouseX - size / 2 : size * piece.getX();
-        float topY = piece.isSelected() ? mouseY - size / 2: size * piece.getY();
-        int circleColor = piece.isBlack() ? color(165, 42,42) : color(244, 226, 198);
+        float topY = piece.isSelected() ? mouseY - size / 2 : size * piece.getY();
+        int circleColor = piece.isBlack() ? color(165, 42, 42) : color(244, 226, 198);
         int textColor = piece.isBlack() ? color(255) : color(0);
         fill(circleColor);
-        ellipse(topX  + 0.5f * size, topY + size * 0.5f, size * 0.8f, size * 0.8f);
+        ellipse(topX + 0.5f * size, topY + size * 0.5f, size * 0.8f, size * 0.8f);
         fill(textColor);
         text(piece.getName(), topX, topY - size * 0.4f / 7f, size, size);
     }
