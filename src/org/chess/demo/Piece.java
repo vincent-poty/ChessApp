@@ -1,12 +1,12 @@
 package org.chess.demo;
 
 public class Piece {
-    private final String name;
-    private int x;
-    private int y;
-    private final boolean isBlack;
-    private boolean isSelected = false;
-    private boolean isCaptured = false;
+    protected final String name;
+    protected int x;
+    protected int y;
+    protected final boolean isBlack;
+    protected boolean isSelected = false;
+    protected boolean isCaptured = false;
     public int oldX;
     public int oldY;
     // public boolean isAlreadyMoved = false;
