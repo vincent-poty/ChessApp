@@ -14,20 +14,38 @@ public class PChess extends PApplet {
         String[] names = {"T", "C", "F", "D", "R", "F", "C", "T"};
         // first line
         for (int x = 0; x < 8; ++x) {
-            pieces.add(new Piece(names[x], x, 0, true, false, false,true));
+            pieces.add(getTheRightPiece(names[x], x, 0,true));
         }
         // second line
         for (int x = 0; x < 8; ++x) {
-            pieces.add(new Pawn("P", x, 1, true, false, false, true));
+            pieces.add(new Pawn("P", x, 1, true, false));
         }
         //third line
         for (int x = 0; x < 8; ++x) {
-            pieces.add(new Piece(names[x], x, 7, false, false, false,true));
+            pieces.add(getTheRightPiece(names[x], x, 7, false));
         }
         //fourd line
         for (int x = 0; x < 8; ++x) {
             // pieces.add(new Piece("P", x, 6, false, false, false));
-            pieces.add(new Pawn("P", x, 6, false, false, false, true));
+            pieces.add(new Pawn("P", x, 6, false, false));
+        }
+    }
+
+    private Piece getTheRightPiece(String name,int x, int y, boolean isBlack){
+        switch (name) {
+            case "T":
+                return new Rook(name, x, y, isBlack, false);
+            case "C":
+                return new Knight(name, x, y, isBlack, false);
+            case "F":
+                return new Bishop(name, x, y, isBlack, false);
+            case "D":
+                return new Queen(name, x, y, isBlack, false);
+            case "R":
+                return new King(name, x, y, isBlack, false);
+            case "P":
+            default:
+                return new Pawn(name, x, y, isBlack, false);
         }
     }
 
@@ -58,17 +76,18 @@ public class PChess extends PApplet {
         // int y = mouseY / size;
 
         for (Piece p : pieces) {
-            if (p.isSelected() ) {
-                p.setX(mouseX / size);
-                p.setY(mouseY / size);
+            if (p.isSelected()) {
+                if (!p.setPosition(mouseX/size,mouseY/size)){
+                    p.setOldPos();
+                }
+                // p.setX(mouseX / size);
+                //p.setY(mouseY / size);
                 p.setSelected(false);
             }
         }
     }
 
     public void mouseDragged() {
-        // int x = mouseX;
-        //int y = mouseY;
         for (Piece p : pieces) {
             if (p.isSelected()) {
                 p.setX(mouseX);
