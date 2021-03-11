@@ -10,6 +10,7 @@ import java.util.List;
 
 public class PChess extends PApplet {
 
+    private boolean isBlackTurn = false;
     private int size = 100;
     private List<Piece> pieces = new ArrayList<>();
 
@@ -17,12 +18,12 @@ public class PChess extends PApplet {
         String[] names = {"T", "C", "F", "D", "R", "F", "C", "T"};
         // black
         pieces.add(new Rook("T", 0, 0, true, false));
-        pieces.add(new Knight("C", 1,0 , true, false));
-        pieces.add(new Bishop("F", 2,0 , true, false));
-        pieces.add(new Queen("D", 3,0 , true, false));
-        pieces.add(new King("R", 4,0 , true, false));
-        pieces.add(new Bishop("F", 5,0 , true, false));
-        pieces.add(new Knight("C", 6,0 , true, false));
+        pieces.add(new Knight("C", 1, 0, true, false));
+        pieces.add(new Bishop("F", 2, 0, true, false));
+        pieces.add(new Queen("D", 3, 0, true, false));
+        pieces.add(new King("R", 4, 0, true, false));
+        pieces.add(new Bishop("F", 5, 0, true, false));
+        pieces.add(new Knight("C", 6, 0, true, false));
         pieces.add(new Rook("T", 7, 0, true, false));
         // second line
         for (int x = 0; x < 8; ++x) {
@@ -30,12 +31,12 @@ public class PChess extends PApplet {
         }
         //white
         pieces.add(new Rook("T", 0, 7, false, false));
-        pieces.add(new Knight("C", 1,7 , false, false));
-        pieces.add(new Bishop("F", 2,7 , false, false));
-        pieces.add(new Queen("D", 3,7 , false, false));
-        pieces.add(new King("R", 4,7 , false, false));
-        pieces.add(new Bishop("F", 5,7 , false, false));
-        pieces.add(new Knight("C", 6,7 , false, false));
+        pieces.add(new Knight("C", 1, 7, false, false));
+        pieces.add(new Bishop("F", 2, 7, false, false));
+        pieces.add(new Queen("D", 3, 7, false, false));
+        pieces.add(new King("R", 4, 7, false, false));
+        pieces.add(new Bishop("F", 5, 7, false, false));
+        pieces.add(new Knight("C", 6, 7, false, false));
         pieces.add(new Rook("T", 7, 7, false, false));
         //fourd line
         for (int x = 0; x < 8; ++x) {
@@ -60,7 +61,7 @@ public class PChess extends PApplet {
         int x = mouseX / size;
         int y = mouseY / size;
         for (Piece p : pieces) {
-            if (x == p.getX() && y == p.getY()) {
+            if (x == p.getX() && y == p.getY() && p.isBlack() == isBlackTurn) {
                 p.setSelected(true);
                 break;
             }
@@ -74,6 +75,7 @@ public class PChess extends PApplet {
         for (Piece p : pieces) {
             if (p.isSelected()) {
                 p.setPosition(x, y);
+                isBlackTurn = !isBlackTurn;
             }
             p.setSelected(false);
         }

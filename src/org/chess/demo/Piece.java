@@ -7,8 +7,6 @@ public class Piece {
     protected final boolean isBlack;
     protected boolean isSelected = false;
     protected boolean isCaptured = false;
-    public int oldX;
-    public int oldY;
     // public boolean isAlreadyMoved = false;
 
 
@@ -16,8 +14,6 @@ public class Piece {
         this.name = name;
         setX(x);
         setY(y);
-        this.oldX = x;
-        this.oldY = y;
         this.isBlack = isBlack;
         this.isSelected = isSelected;
     }
