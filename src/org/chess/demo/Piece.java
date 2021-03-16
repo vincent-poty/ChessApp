@@ -55,7 +55,7 @@ public class Piece {
     }
 
 
-    public  boolean setPosition(int x, int y){
+    public boolean setPosition(int x, int y) {
         return true;
     }
 
