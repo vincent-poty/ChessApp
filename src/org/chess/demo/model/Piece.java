@@ -1,14 +1,12 @@
-package org.chess.demo;
+package org.chess.demo.model;
 
-public class Piece {
+public abstract class Piece {
     protected final String name;
     protected int x;
     protected int y;
     protected final boolean isBlack;
     protected boolean isSelected = false;
     protected boolean isCaptured = false;
-    // public boolean isAlreadyMoved = false;
-
 
     public Piece(String name, int x, int y, boolean isBlack, boolean isSelected) {
         this.name = name;
@@ -55,22 +53,17 @@ public class Piece {
     }
 
 
-    public boolean setPosition(int x, int y) {
-        return true;
-    }
-
+    public abstract void setPosition(int x, int y) throws InvalidMovementException;
 
     public boolean isCaptured() {
         return isCaptured;
     }
 
+
+
     public void setCaptured(boolean captured) {
         isCaptured = captured;
     }
-
-   /* public boolean checkIfMovedIsAllowed(int x,int y){
-
-    }*/
 }
 
 

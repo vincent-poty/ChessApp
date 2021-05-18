@@ -1,8 +1,6 @@
 package org.chess.demo;
 
-import org.chess.demo.Pawn;
-import org.chess.demo.Piece;
-import org.chess.demo.Rook;
+import org.chess.demo.model.*;
 import processing.core.PApplet;
 
 import java.util.ArrayList;
@@ -11,49 +9,27 @@ import java.util.List;
 public class PChess extends PApplet {
 
     private boolean isBlackTurn = false;
-    private int size = 100;
-    private List<Piece> pieces = new ArrayList<>();
+    private int size = 90;
+    private Piece selected = null;
+    private String message = "";
+    private List<Piece> pieces;
 
-    private void buildPieces() {
-        String[] names = {"T", "C", "F", "D", "R", "F", "C", "T"};
-        // black
-        pieces.add(new Rook("T", 0, 0, true, false));
-        pieces.add(new Knight("C", 1, 0, true, false));
-        pieces.add(new Bishop("F", 2, 0, true, false));
-        pieces.add(new Queen("D", 3, 0, true, false));
-        pieces.add(new King("R", 4, 0, true, false));
-        pieces.add(new Bishop("F", 5, 0, true, false));
-        pieces.add(new Knight("C", 6, 0, true, false));
-        pieces.add(new Rook("T", 7, 0, true, false));
-        // second line
-        for (int x = 0; x < 8; ++x) {
-            pieces.add(new Pawn("P", x, 1, true, false));
-        }
-        //white
-        pieces.add(new Rook("T", 0, 7, false, false));
-        pieces.add(new Knight("C", 1, 7, false, false));
-        pieces.add(new Bishop("F", 2, 7, false, false));
-        pieces.add(new Queen("D", 3, 7, false, false));
-        pieces.add(new King("R", 4, 7, false, false));
-        pieces.add(new Bishop("F", 5, 7, false, false));
-        pieces.add(new Knight("C", 6, 7, false, false));
-        pieces.add(new Rook("T", 7, 7, false, false));
-        //fourd line
-        for (int x = 0; x < 8; ++x) {
-            pieces.add(new Pawn("P", x, 6, false, false));
-        }
+    public PChess() {
+        super();
+        this.pieces = pieces;
     }
 
     @Override
     public void settings() {
-        buildPieces();
-        this.size(8 * size, 8 * size);
+        this.size(8 * size, 8 * size + 40);
     }
 
     @Override
     public void draw() {
+        background(255);
         drawCases();
         drawPieces();
+        drawMessage();
     }
 
     @Override
@@ -61,7 +37,7 @@ public class PChess extends PApplet {
         int x = mouseX / size;
         int y = mouseY / size;
         for (Piece p : pieces) {
-            if (x == p.getX() && y == p.getY() && p.isBlack() == isBlackTurn) {
+            if (x == p.getX() && y == p.getY()) {
                 p.setSelected(true);
                 break;
             }
@@ -74,8 +50,11 @@ public class PChess extends PApplet {
         int y = mouseY / size;
         for (Piece p : pieces) {
             if (p.isSelected()) {
-                p.setPosition(x, y);
-                isBlackTurn = !isBlackTurn;
+                try { p.setPosition(x, y);
+                    message ="";
+                } catch (InvalidMovementException e) {
+                    message = "Mouvement non autorisé";
+                }
             }
             p.setSelected(false);
         }
@@ -111,8 +90,8 @@ public class PChess extends PApplet {
         fill(textColor);
         text(piece.getName(), topX, topY - size * 0.4f / 7f, size, size);
     }
+    private void drawMessage(){
+        textAlign(LEFT);
+        text(message,10, 8 * size + 30);
+    }}
 
-    public static void main(String[] args) {
-        PApplet.runSketch(new String[]{"org.chess.demo.PChess"}, new PChess());
-    }
-}

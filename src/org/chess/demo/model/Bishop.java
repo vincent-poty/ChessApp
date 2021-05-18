@@ -1,4 +1,4 @@
-package org.chess.demo;
+package org.chess.demo.model;
 
 
 public class Bishop extends Piece {
@@ -8,14 +8,13 @@ public class Bishop extends Piece {
     }
 
     @Override
-    public boolean setPosition(int x, int y) {
+    public void setPosition(int x, int y) throws InvalidMovementException {
         int deltaY = Math.abs(y - this.y);
         int deltaX = Math.abs(x - this.x);
         if (deltaY == deltaX) {
             this.x = x;
             this.y = y;
-            return true;
         }
-        return false;
+        throw new InvalidMovementException();
     }
 }

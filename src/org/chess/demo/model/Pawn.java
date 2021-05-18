@@ -1,4 +1,4 @@
-package org.chess.demo;
+package org.chess.demo.model;
 
 
 public class Pawn extends Piece {
@@ -8,8 +8,8 @@ public class Pawn extends Piece {
     }
 
     @Override
-    public boolean setPosition(int x, int y) {
-        if (x != this.x) return false;
+    public void setPosition(int x, int y) throws InvalidMovementException {
+        if (x != this.x) throw new InvalidMovementException();
         int deltaY = (y - this.y);
         if ((isBlack() && deltaY == 1) ||
                 (isBlack() && this.y == 1 && deltaY == 2) ||
@@ -17,8 +17,8 @@ public class Pawn extends Piece {
                 (!isBlack() && this.y == 6 && deltaY == -2)) {
             this.x = x;
             this.y = y;
-            return true;
+        } else {
+            throw new InvalidMovementException();
         }
-        return false;
     }
 }
