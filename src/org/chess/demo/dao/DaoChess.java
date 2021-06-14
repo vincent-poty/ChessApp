@@ -1,8 +1,6 @@
 package org.chess.demo.dao;
 
-import org.chess.demo.model.Pawn;
-import org.chess.demo.model.Piece;
-import org.chess.demo.model.Rook;
+import org.chess.demo.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -24,10 +22,28 @@ public class DaoChess {
                         pieces.add(new Pawn(name,x ,y , isblack, iscaptured);
                         break;
                     case "T":
+                        pieces.add(new Rook(name,x ,y , isblack, iscaptured);
+                        break;
+                    case "c":
+                        pieces.add(new Knight(name,x ,y , isblack, iscaptured);
+                        break;
+                    case "F":
+                        pieces.add(new Bishop(name,x ,y , isblack, iscaptured);
+                        break;
+                    case "D":
+                        pieces.add(new Queen(name,x ,y , isblack, iscaptured);
+                        break;
+                    case "R":
+                        pieces.add(new King(name,x ,y , isblack, iscaptured);
+                        break;
+                    default:
+                        throw new RuntimeException("Nom de pièce non supporté" + name);
                 }
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            throw new RuntimeException("Erreur avec la base de données");
         }
+        return pieces;
     }
 }

@@ -1,11 +1,11 @@
 package org.chess.demo.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChessHelper {
-    public List<Piece> build
-
-    {
+    public List<Piece> build(){
+        List<Piece> pieces = new ArrayList<>();
         build.add(new Rook("T", 0, 0, true, false));
         build.add(new Knight("C", 1, 0, true, false));
         build.add(new Bishop("F", 2, 0, true, false));
